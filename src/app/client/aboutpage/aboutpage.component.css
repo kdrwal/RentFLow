@@ -1,0 +1,16 @@
+h2, h3 {
+  color: #466f97;
+}
+
+h4{
+  color: #435a9b;
+}
+
+.bg-light {
+  background-color: #f8fafc !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

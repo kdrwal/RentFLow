@@ -1,0 +1,53 @@
+<h2 class="text-center py-5">Reservations</h2>
+<div class="d-flex justify-content-center align-items-center gap-3 mb-4">
+    
+  <input class="form-control w-50 p-2 shadow-sm border rounded" type="text" placeholder="Search for a Reservation" [(ngModel)]="searchTerm" (ngModelChange)="applyFilter()" />
+</div>
+
+<div class="card card">
+    <div class="card-body">
+<div class="table-responsive">
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Bike ID </th>
+            <th>Bike</th>
+            <th>Quantity</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reservation of filteredReservations">
+            <td>{{ reservation.userId }}</td>
+            <td>{{ reservation.firstName }}</td>
+            <td>{{ reservation.lastName }}</td>
+            <td>{{ reservation.email }}</td>
+            <td>{{ reservation.bikeId }}</td>
+            <td>{{ reservation.description }}</td>
+            <td>{{ reservation.quantity }}</td>
+            <td>{{ reservation.startDate | date }}</td>
+            <td>{{ reservation.endDate | date }}</td>
+            <td>{{ reservation.totalPrice }} PLN</td>
+            <td>
+                <button class="btn btn-danger btn-sm m-3" (click)="onDelete(reservation.reservationId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+
+</div>
+</div>
+    </div>
+</div>
+
+
+

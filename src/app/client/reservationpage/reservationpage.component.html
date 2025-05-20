@@ -1,0 +1,53 @@
+<div class="container">
+<h1 class="text-md-center m-5">Search for Bikes</h1>
+
+<div class="m-5 d-grid gap-5">
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="form-floating">
+          <input class="form-control" type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterBikes()" placeholder="Search for Bike" />
+          <label class="text-primary form-label">Search for Bike</label>
+        </div>
+      </div>
+
+      
+      <div class="col-12 col-md-4">
+        <div class="form-floating">
+          <select class="form-control" [(ngModel)]="selectedCategory" (ngModelChange)="filterBikes()">
+            <option value="">All Categories</option>
+            <option *ngFor="let item of categories" [value]="item">{{item}}</option>
+          </select>
+          <label class="text-primary form-label">Category</label>
+        </div>
+      </div>
+
+    </div>
+</div >
+<div class="container">
+    <div class="row g-3">
+      <div class="col-sm-6 col-md-6 col-lg-4" *ngFor="let bike of bikes">
+        <div class="card">
+            <img src="{{ bike.imageUrl }}" class="card-img-top" alt="Bike image" />
+            <div class="card-body">
+                <h5 class="card-title">{{ bike.description }}</h5>
+                <p class="card-text">
+                    <strong>Brand:</strong> {{ bike.brand }}<br />
+                    <strong>Category:</strong> {{ bike.category }}<br />
+                    <strong>Color:</strong> {{ bike.color }}<br />
+                    <strong>Size:</strong> {{ bike.size }}<br />
+                    <strong>Price per day:</strong> {{ bike.price }} PLN
+                </p>
+                <a [routerLink] ="['/client/reservationbike', bike.bikeId]" class="btn btn-primary">Reserve now</a>
+            </div>
+        </div>
+    </div>
+ 
+    </div>
+  </div>
+  
+  
+ 
+
+
+<br>
+</div>

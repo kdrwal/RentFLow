@@ -1,0 +1,25 @@
+<h2 class="text-center py-5">Edit User</h2>
+
+
+
+<form (ngSubmit)="onSubmit()" class="border rounded p-5" style="background-color: white;" >
+
+    
+  
+    <div class="mb-3">
+        <label class="from-label">First Name</label>
+        <input class="form-control" type="text" name="firstName" [(ngModel)]="user.firstName" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Last Name</label>
+        <input class="form-control" type="text" name="lastName" [(ngModel)]="user.lastName" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Email</label>
+        <input class="form-control" type="text" name="email" [(ngModel)]="user.email" />
+    </div>
+    
+
+
+    <button class="btn btn-primary btn-lg" type="submit" >Edit</button>
+</form>

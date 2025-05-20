@@ -1,0 +1,101 @@
+
+.navbar {
+    background: linear-gradient(135deg, #466f97, #69b0df);
+    padding: 15px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar:hover {
+    transform: scale(1.02);
+}
+
+
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease-in-out, text-shadow 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #04a7a7;
+    text-shadow: 3px 3px 10px rgba(18, 188, 218, 0.8);
+}
+
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    color: #fff;
+    padding: 8px 16px;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #3bd8ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3bd1ff;
+    transform: scale(1.1);
+}
+
+
+.navbar .login-link {
+   margin-left: auto;
+   margin-right: 90px;
+    
+}
+
+.navbar .login-link .nav-link {
+    font-weight: bold;
+    color: #3be8ff;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar .login-link .nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(59, 242, 255, 0.8);
+}
+
+
+.navbar-toggler {
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+

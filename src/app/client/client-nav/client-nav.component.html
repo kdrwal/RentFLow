@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/client/home">Rent Flow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="/client/home" routerLink="/client/home"> Home</a>
+          <a class="nav-link active" href="/client/about" routerLink="/client/about"> About</a>
+          <a class="nav-link active" href="/client/reservation" routerLink="/client/reservation"> Reservations</a>
+
+          <div class="navbar-nav ms-auto login-link">
+            
+          </div>  
+          <ng-container *ngIf="isLoggedIn; else loginLink">
+            <div class="nav-link active" 
+            href="/client/userpage" routerLink="/client/userpage" style="cursor:pointer">Hello, {{ userName }} 
+
+            </div>
+            <a class="nav-link" (click)="authService.signOut()" style="cursor:pointer">Sign Out</a>
+          </ng-container>
+          
+          <ng-template #loginLink>
+            <a class="nav-link" routerLink="/client/login">Login</a>
+          </ng-template>
+          
+        </div>
+      </div>
+    </div>
+  </nav>

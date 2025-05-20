@@ -1,0 +1,44 @@
+<h2 class="text-center py-5">Users</h2>
+<div class="d-flex justify-content-center align-items-center gap-3 mb-4">
+    
+  <input class="form-control w-50 p-2 shadow-sm border rounded" [(ngModel)]="searchTerm" (input)="filterUsers()" type="text" placeholder=" Search for a User" />
+
+</div>
+
+<div class="card card">
+    <div class="card-body">
+<div class="table-responsive">
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.userId}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            
+            <td>
+                <button class="btn btn-primary btn-sm m-3" (click)="editUser(user.userId)">Edit</button>
+                <button class="btn btn-danger btn-sm m-3" (click)="deleteUser(user.userId)" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+
+</div>
+</div>
+    </div>
+</div>
+
+
+

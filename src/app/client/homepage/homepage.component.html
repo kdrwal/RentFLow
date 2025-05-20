@@ -1,0 +1,48 @@
+
+<!-- Hero section -->
+<div class="container"> 
+<br>
+<div class="hero-section text-white text-center d-flex align-items-center justify-content-center flex-column">
+    
+    <h1 class="fw-bold">Welcome to RentFlow</h1>
+    <h3 class="fw-bold">Reserve your bike now!</h3>
+  
+   <button class="btn btn-success btn-lg mt-3" (click)="goToReservationPage()" >Book Now</button>
+  </div>
+  
+  <!-- Trusted by -->
+  <div class="container text-center my-5">
+    <h5 class="text-muted">Trusted by</h5>
+    <div class="d-flex justify-content-center gap-5 flex-wrap align-items-center mt-3">
+      <img src="/shopee.png" alt="Shopee"  height="80" />
+      <img src="/decathlon.jpg" alt="Decathlon" height="90" />
+      <img src="/trek.jpg" alt="trek" height="90" />
+      <img src="/shimano.jpg" alt="shimano" height="90" />
+    </div>
+  </div>
+  
+  <!-- Services -->
+  <div class="bg-light py-5">
+    <div class="container text-center">
+      <h3 class="text-primary fw-semibold">SERVICES</h3>
+      <h2 class="fw-bold">What do we offer</h2>
+      <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <br>
+      <div class="row mt-4">
+        <div class="col-md-6 col-lg-3 mb-4" *ngFor="let service of services">
+          <div class="card h-100 custom-card text-center">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-wrapper mb-3">
+                <br>
+                <img [src]="service.image" alt="{{ service.title }}" class="service-icon">
+              </div>
+              <h5 class="card-title fw-bold">{{ service.title }}</h5>
+              <p class="card-text text-muted">{{ service.description }}</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

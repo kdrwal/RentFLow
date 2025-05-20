@@ -1,0 +1,64 @@
+<!-- src/app/client/userpage/userpage.component.html -->
+<div class="outer-resposnive" *ngIf="!loading; else loadingTpl">
+    <div class="panel border bg-white mx-auto my-5 p-4" style="max-width:900px;">
+      <h3 class="text-center mb-4">User Profile</h3>
+      <form [formGroup]="profileForm" (ngSubmit)="onUpdateProfile()">
+        <div class="mb-3">
+          <label>First Name</label>
+          <input formControlName="firstName" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label>Last Name</label>
+          <input formControlName="lastName" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label>Email</label>
+          <input formControlName="email" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label>New Password</label>
+          <input formControlName="passwordHash" type="password" class="form-control" placeholder="••••••" />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+        <button type="button" class="btn btn-danger w-100 mt-2" (click)="onDeleteAccount()">
+          Delete Account
+        </button>
+      </form>
+  
+      <h4 class="mt-5">Active Reservations</h4>
+      <div class="table-responsive">
+      <table class="table table-striped mt-2" *ngIf="reservations.length; else noResTpl">
+        <thead>
+          <tr>
+            <th>Bike</th><th>From</th><th>To</th><th>Quantity</th><th>Total Price</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of reservations">
+            <td>{{ r.reservationBikes[0]?.bike.description }}</td>
+            <td>{{ r.startDate | date }}</td>
+            <td>{{ r.endDate | date }}</td>
+            <td>{{ r.reservationBikes[0]?.quantity }}</td>
+            <td> {{r.totalPrice }} PLN</td>
+            <td>
+              {{ r.status }}
+              <button *ngIf="r.status !== 'Cancelled'" (click)="onCancelReservation(r.reservationId)" class="btn btn-sm btn-warning ms-2">
+                Cancel
+              </button>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #loadingTpl>
+    <div class="text-center mt-5">Loading...</div>
+  </ng-template>
+  
+  <ng-template #noResTpl>
+    <div class="text-muted">No active reservations.</div>
+  </ng-template>
+  

@@ -1,0 +1,45 @@
+<h2 class="text-center py-5">{{isEditing? 'Edit' : 'Create'}}  Bike</h2>
+
+<div *ngIf="errorMessage != ''">
+    {{errorMessage}}
+</div>
+
+<form (ngSubmit)="onSubmit()" class="border rounded p-5" style="background-color: white;" >
+
+    
+    <div class="mb-3">
+        <label class="from-label">Description</label>
+        <input class="form-control" type="text" name="description" [(ngModel)]="bike.description" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Image</label>
+        <input class="form-control" type="text" name="imageUrl" [(ngModel)]="bike.imageUrl" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Price</label>
+        <input class="form-control" type="number" name="price" [(ngModel)]="bike.price" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Category</label>
+        <input class="form-control" type="text" name="category" [(ngModel)]="bike.category" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Brand</label>
+        <input class="form-control" type="text" name="brand" [(ngModel)]="bike.brand" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Color</label>
+        <input class="form-control" type="text" name="color" [(ngModel)]="bike.color" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Size</label>
+        <input class="form-control" type="text" name="size" [(ngModel)]="bike.size" />
+    </div>
+    <div class="mb-3">
+        <label class="from-label">Quantity</label>
+        <input class="form-control" type="text" name="size" [(ngModel)]="bike.quantity" />
+    </div>
+
+
+    <button class="btn btn-primary btn-lg" type="submit" >{{isEditing? 'Edit' : 'Create'}}</button>
+</form>

@@ -1,0 +1,67 @@
+<div class="container py-5">
+
+  
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Admin Dashboard</h2>
+    <p class="text-muted">Overview of system activity</p>
+  </div>
+
+ 
+  <div class="row g-4 mb-4">
+    <div class="col-md-4">
+      <div class="card text-white bg-primary shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title">Total Reservations</h5>
+          <p class="display-6">{{ totalReservations }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-success shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title">Total Users</h5>
+          <p class="display-6">{{ totalUsers }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-info shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title">Total Bikes</h5>
+          <p class="display-6">{{ totalBikes }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-4">Reservations Over Time</h5>
+      <canvas id="reservationsChart" height="150"></canvas>
+    </div>
+  </div>
+
+  
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4">Top Bikes</h5>
+          <canvas id="topBikesChart" height="150"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4">New Users (Last 7 Days)</h5>
+          <canvas id="newUsersChart" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
